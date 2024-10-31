@@ -1,0 +1,95 @@
+function encriptar() {
+    let texto = document.getElementById("ingresar-texto").value;
+
+    let textoCifrado = texto
+        .replace(/a/g, "97")
+        .replace(/b/g, "98")
+        .replace(/c/g, "99")
+        .replace(/d/g, "100")
+        .replace(/e/g, "101")
+        .replace(/f/g, "102")
+        .replace(/g/g, "103")
+        .replace(/h/g, "104")
+        .replace(/i/g, "105")
+        .replace(/j/g, "106")
+        .replace(/k/g, "107")
+        .replace(/l/g, "108")
+        .replace(/m/g, "109")
+        .replace(/n/g, "110")
+        .replace(/o/g, "111")
+        .replace(/p/g, "112")
+        .replace(/q/g, "113")
+        .replace(/r/g, "114")
+        .replace(/s/g, "115")
+        .replace(/t/g, "116")
+        .replace(/u/g, "117")
+        .replace(/v/g, "118")
+        .replace(/w/g, "119")
+        .replace(/x/g, "120")
+        .replace(/y/g, "121")
+        .replace(/z/g, "122")
+        .replace(/á/g, "160")
+        .replace(/é/g, "136")
+        .replace(/í/g, "161")
+        .replace(/ó/g, "162")
+        .replace(/ú/g, "163")
+
+    if (texto.length !== 0) {
+        document.getElementById("resultado-texto").value = textoCifrado;
+    } else {
+        alert("Debes ingresar algún texto para encriptar");
+    }
+}
+
+function desencriptar() {
+    let textoCifrado = document.getElementById("ingresar-texto").value;
+
+    let textoOriginal = textoCifrado
+        .replace(/97/g, "a")
+        .replace(/98/g, "b")
+        .replace(/99/g, "c")
+        .replace(/100/g, "d")
+        .replace(/101/g, "e")
+        .replace(/102/g, "f")
+        .replace(/103/g, "g")
+        .replace(/104/g, "h")
+        .replace(/105/g, "i")
+        .replace(/106/g, "j")
+        .replace(/107/g, "k")
+        .replace(/108/g, "l")
+        .replace(/109/g, "m")
+        .replace(/110/g, "n")
+        .replace(/111/g, "o")
+        .replace(/112/g, "p")
+        .replace(/113/g, "q")
+        .replace(/114/g, "r")
+        .replace(/115/g, "s")
+        .replace(/116/g, "t")
+        .replace(/117/g, "u")
+        .replace(/118/g, "v")
+        .replace(/119/g, "w")
+        .replace(/120/g, "x")
+        .replace(/121/g, "y")
+        .replace(/122/g, "z")
+        .replace(/160/g, "á")
+        .replace(/136/g, "é")
+        .replace(/161/g, "í")
+        .replace(/162/g, "ó")
+        .replace(/163/g, "ú")
+
+    if (textoCifrado.length !== 0) {
+        document.getElementById("resultado-texto").value = textoOriginal;
+    } else {
+        alert("Debes ingresar algún texto para desencriptar");
+    }
+}
+
+document.getElementById("btn-encriptar").addEventListener("click", encriptar);
+
+document.getElementById("btn-desencriptar").addEventListener("click", desencriptar);
+
+document.getElementById("btn-eliminar").addEventListener("click", function() {
+    document.getElementById("ingresar-texto").value = "";
+    document.getElementById("resultado-texto").value = "";
+});
+
